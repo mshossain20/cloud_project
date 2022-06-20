@@ -2,17 +2,17 @@
 
 The files in this repository were used to configure the network depicted below.
 
-:[Network Diagram](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/diagram/NETWORK%20DIAGRAM.png) 
+![Network Diagram](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/diagram/NETWORK%20DIAGRAM.png) 
 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Yaml file may be used to install only certain pieces of it, such as Filebeat and metricbeat.
 
 Enter the playbook file 
-  o	[Install-elk.yml (https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/install-elk%20.yml)
-  o	[filebeat-configuration.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/filebeat-config%20.yml)
-  o	[filebeat.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/filebeat.yml)
-  o	[metricbeat-configuration.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/metricbeat-config.yml)
-  o	[metricbeat.yml](https://github.com/mshossain20/cloud_project/blob/main/Ansible/metricbeat.yml)
+  ![Install-elk.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/install-elk%20.yml)
+  ![filebeat-configuration.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/filebeat-config%20.yml)
+  ![filebeat.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/filebeat.yml)
+  ![metricbeat-configuration.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/metricbeat-config.yml)
+  ![metricbeat.yml](https://github.com/mshossain20/cloud_project/blob/main/Ansible/metricbeat.yml)
   
 
 This document contains the following details:
@@ -99,7 +99,7 @@ Command: sysctl -w vm.max_map_count=262144
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-:[docker ps](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Images/docker%20ps.docx) 
+![docker ps](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Images/docker%20ps.docx) 
 
 
 ### Target Machines & Beats
@@ -133,11 +133,11 @@ SSH into the control node and follow the steps below:
 
 ansible_python_interpreter=/usr/bin/python3 [10.1.0.8] ansible_python_interpreter=/usr/bin/python3 [10.1.0.9] , ansible_python_interpreter=/usr/bin/python3 [elk] [10.2.0.4] ansible_python_interpreter=/usr/bin/python3 Run the playbook, and SSH into the Elk vm, then run docker ps to check that the installation worked as expected. Playbook: install_elk.yml Location: /etc/ansible/roles/install_elk.yml Navigate to http://[your.ELK-VM.External.IP]:5601/app/kibana to confirm ELK and kibana are running. You  may need to try from multiple web browsers Click 'Explore On Your Own' and you should see the following:
 
-:[kibana](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Images/kibana.docx)
+![kibana](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Images/kibana.docx)
 
 Using the Playbook-filebeat-playbook.yml - Copy the filebeat.yml file to the /etc/ansible/files/ directory. - Update the configuration file to include the Private IP of the Elk-Server to the ElasticSearch and Kibana sections of the configuration file. - Create a new playbook in the /etc/ansible/roles/ directory that will install, drop in the updated configuration file, enable and configure system module, run the filebeat setup, and start the filebeat service. - Create a new playbook in the /etc/ansible/roles/ directory that will install, drop in the updated configuration file, enable and configure system module, run the metricbeat setup, and start the metricbeat service. - Run the playbooks, and navigate back to the installation page on the ELk-Server GUI, click the check data on the Module Status - Click the verfiy incoming Data to check and see the receiving logs from the DVWA machines. you should see the following:
 
-:[filebeat-ecs](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Images/filebeat.ecs.docx)
+![filebeat-ecs](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Images/filebeat.ecs.docx)
 
 The commands needed to run the Ansible configuration for the Elk-Server are: - ssh azdmin@JumpBox(Public IP) - sudo docker container list -a (locate your ansible container) - sudo docker start container (name of the container) - sudo docker attach container (name of the container) cd /etc/ansible/ - ansible-playbook install-elk.yml (configures Elk-Server and starts the Elk container on the Elk-Server) wait a couple minutes for the implementation of the Elk-Server - cd /etc/ansible/roles/ - ansible-playbook filebeat.yml (installs Filebeat and Metricbeat) - open a new web browser (http://[your.ELK-VM.External.IP]:5601/app/kibana) This will bring up the Kibana Web Portal - check the Module status for file beat and metric beat to see their data receiving. ** You will need to ensure all files are properly placed before running the ansible-playbooks. 
 
