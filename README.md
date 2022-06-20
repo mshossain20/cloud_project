@@ -99,7 +99,7 @@ Command: sysctl -w vm.max_map_count=262144
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![docker ps](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Images/docker%20ps.docx) 
+![docker ps](https://github.com/mshossain20/cloud_project/blob/71ac2b493b9ba5afab1907befe5ca12eeee6a5c2/Images/docker.png) 
 
 
 ### Target Machines & Beats
