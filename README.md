@@ -8,15 +8,16 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Yaml file may be used to install only certain pieces of it, such as Filebeat and metricbeat.
 
 Enter the playbook file 
-  ![Install-elk.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/install-elk%20.yml)
+
+  -[Install-elk.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/install-elk%20.yml)
   
-  ![filebeat-configuration.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/filebeat-config%20.yml)
+  -[filebeat-configuration.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/filebeat-config%20.yml)
   
-  ![filebeat.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/filebeat.yml)
+  -[filebeat.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/filebeat.yml)
   
-  ![metricbeat-configuration.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/metricbeat-config.yml)
+  -[metricbeat-configuration.yml](https://github.com/mshossain20/cloud_project/blob/1aec6224e482eab8497dcb1a97491df25d2d768e/Ansible/metricbeat-config.yml)
   
-  ![metricbeat.yml](https://github.com/mshossain20/cloud_project/blob/main/Ansible/metricbeat.yml)
+  -[metricbeat.yml](https://github.com/mshossain20/cloud_project/blob/main/Ansible/metricbeat.yml)
   
 
 This document contains the following details:
